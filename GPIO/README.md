@@ -3,4 +3,4 @@ Cet exercice consiste à créer un circuit avec une LED et un bouton. Lors du pr
 ## Introduction
 Pour commencé j'ai décicé de gérer l'appui sur le bouton poussoir par interruption afin de pouvoir au mieux actualiser le nouvel appui sur le bouton.
 ## Le code
-Voici le lien vers le code complet [GPIO/exercice-1](code)
+Voici le lien vers le code complet [code](exercice-1)
