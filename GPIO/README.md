@@ -6,7 +6,15 @@ fonction du nombre de pressions sur un bouton poussoir.
 • Microcontrôleur compatible MicroPython (Raspberry Pi Pico)\
 • Module LED\
 • Module bouton poussoir\
-• Câbles\
+• Câbles
+## Consignes
+1. Branchez la LED et le bouton poussoir au microcontrôleur 
+2. Ecrivez un programme MicroPython qui répond aux exigences suivantes : 
+o La LED doit clignoter à l’infini avec une fréquence de 0,5 Hz lorsque le bouton poussoir 
+est pressé une fois.
+o La LED doit clignoter plus vite lorsque le bouton poussoir est pressé une second fois.
+o La LED doit s'éteindre lorsque le bouton poussoir est pressé une troisième fois.
+3. Testez votre programme et vérifiez qu'il fonctionne correctement.
 ## Introduction
 Dans un premier temps, j'ai choisi de gérer l'appui sur le bouton-poussoir via une interruption. Cette approche permet une mise à jour instantanée à chaque pression sur le bouton, assurant ainsi une réactivité optimale dans la détection des nouveaux appuis.
 ## Le code
