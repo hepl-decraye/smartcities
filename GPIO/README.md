@@ -65,5 +65,5 @@ Si val est égal à 1, la LED est basculée (allumée ou éteinte) et le program
 Si val est égal à 2, la LED est à nouveau basculée, mais cette fois avec un délai de 0.1 seconde.
 \
 Si val est égal à 3, la LED est éteinte, la variable val est réinitialisée à 0.
-## Le GIF
+## Test du programme
 ![](https://github.com/hepl-decraye/smartcities/blob/main/gifled.gif)
