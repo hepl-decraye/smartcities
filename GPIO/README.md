@@ -9,7 +9,7 @@ fonction du nombre de pressions sur un bouton poussoir.
 • Câbles
 ## Consignes
 1. Branchez la LED et le bouton poussoir au microcontrôleur 
-2. Ecrivez un programme MicroPython qui répond aux exigences suivantes : 
+2. Ecrivez un programme MicroPython qui répond aux exigences suivantes : \
 o La LED doit clignoter à l’infini avec une fréquence de 0,5 Hz lorsque le bouton poussoir 
 est pressé une fois.\
 o La LED doit clignoter plus vite lorsque le bouton poussoir est pressé une second fois.\
