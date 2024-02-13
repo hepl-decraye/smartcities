@@ -22,7 +22,7 @@ de clignotement à une autre.\
 ## Introduction
 Dans un premier temps, j'ai choisi de gérer l'appui sur le bouton-poussoir via une interruption. Cette approche permet une mise à jour instantanée à chaque pression sur le bouton, assurant ainsi une réactivité optimale dans la détection des nouveaux appuis.
 ## Le code
-Voici un lien vers le code complet [code](exercice-1)
+
 ```
 import machine
 import utime
