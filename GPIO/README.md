@@ -31,5 +31,7 @@ while True:
         val = 0
         utime.sleep(1)
 ```
+## Explication du code
+1. Les bibliothèques machine et utime sont importées.
 ## Le GIF
 ![](https://github.com/hepl-decraye/smartcities/blob/main/gifled.gif)
