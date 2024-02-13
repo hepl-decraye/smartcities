@@ -15,6 +15,10 @@ est pressé une fois.\
 o La LED doit clignoter plus vite lorsque le bouton poussoir est pressé une second fois.\
 o La LED doit s'éteindre lorsque le bouton poussoir est pressé une troisième fois.
 3. Testez votre programme et vérifiez qu'il fonctionne correctement.
+## Bonus
+• Ajoutez un délai ou un effet dans les clignotements de la LED ou dans le passage d’une vitesse 
+de clignotement à une autre.\
+• Modifiez le nombre d'appuis nécessaires pour changer la vitesse de clignotement.
 ## Introduction
 Dans un premier temps, j'ai choisi de gérer l'appui sur le bouton-poussoir via une interruption. Cette approche permet une mise à jour instantanée à chaque pression sur le bouton, assurant ainsi une réactivité optimale dans la détection des nouveaux appuis.
 ## Le code
