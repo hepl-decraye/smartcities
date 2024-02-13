@@ -1,5 +1,6 @@
-# Travail demandé
-Cet exercice consiste à créer un circuit avec une LED et un bouton. Lors du premier appui, la LED commence à clignoter, le deuxième appui accélère la fréquence de clignotement, et le troisième éteint la LED. Ce cycle se répète à chaque nouvelle pression sur le bouton.
+# Objectif
+Créer un programme MicroPython qui permet de faire clignoter une LED à différentes vitesses en 
+fonction du nombre de pressions sur un bouton poussoir.
 ## Introduction
 Dans un premier temps, j'ai choisi de gérer l'appui sur le bouton-poussoir via une interruption. Cette approche permet une mise à jour instantanée à chaque pression sur le bouton, assurant ainsi une réactivité optimale dans la détection des nouveaux appuis.
 ## Le code
