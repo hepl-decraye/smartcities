@@ -3,10 +3,10 @@
 Créer un programme MicroPython qui permet de faire clignoter une LED à différentes vitesses en 
 fonction du nombre de pressions sur un bouton poussoir.
 ## Matériel
-• Microcontrôleur compatible MicroPython (Raspberry Pi Pico)
-• Module LED
-• Module bouton poussoir
-• Câbles
+• Microcontrôleur compatible MicroPython (Raspberry Pi Pico)\
+• Module LED\
+• Module bouton poussoir\
+• Câbles\
 ## Introduction
 Dans un premier temps, j'ai choisi de gérer l'appui sur le bouton-poussoir via une interruption. Cette approche permet une mise à jour instantanée à chaque pression sur le bouton, assurant ainsi une réactivité optimale dans la détection des nouveaux appuis.
 ## Le code
