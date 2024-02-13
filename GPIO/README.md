@@ -31,3 +31,5 @@ while True:
         val = 0
         utime.sleep(1)
 ```
+## Le GIF
+![](https://github.com/hepl-decraye/smartcities/blob/main/gifled.gif)
