@@ -6,11 +6,11 @@
 </p>
 
 <p style="text-align:justify;"><strong>
-Le Raspberry Pi Pico</strong> est une carte de développement microcontrôleur compacte et abordable, conçue par la fondation Raspberry Pi.\
-Le Pico est équipé du microcontrôleur <strong>RP2040</strong>, spécialement conçu par Raspberry Pi. Il intègre un double cœur <strong>ARM Cortex-M0+</strong> cadencé à 133 MHz, offrant une performance respectable pour les applications embarquées.\
+Le Raspberry Pi Pico</strong> est une carte de développement microcontrôleur compacte et abordable, conçue par la fondation Raspberry Pi.
+Le Pico est équipé du microcontrôleur <strong>RP2040</strong>, spécialement conçu par Raspberry Pi. Il intègre un double cœur <strong>ARM Cortex-M0+</strong> cadencé à 133 MHz, offrant une performance respectable pour les applications embarquées.
 </p>
 <p style="text-align:justify;">
-  Il dispose de broches GPIO (General Purpose Input/Output) pour la connexion de composants électroniques externes, ainsi que de broches pour l'I2C, l'UART.\
+  Il dispose de broches GPIO (General Purpose Input/Output) pour la connexion de composants électroniques externes, ainsi que de broches pour l'I2C, l'UART.
 <strong>Mémoire</strong> : Le microcontrôleur RP2040 est doté de <strong>264 Ko de mémoire RAM</strong>, ce qui est suffisant pour de nombreuses applications embarquées. Il dispose également de <strong>2 Mo de mémoire flash</strong> pour le stockage de programmes.
 </p>
 ## Pinout
