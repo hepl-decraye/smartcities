@@ -1,4 +1,5 @@
 # smartcities
+![image](https://github.com/hepl-decraye/smartcities/blob/main/images/PicoW_1000x.webp)
 ## Raspberry Pi Pico
 Le Raspberry Pi Pico est une carte de développement microcontrôleur compacte et abordable, conçue par la fondation Raspberry Pi.\
 Le Pico est équipé du microcontrôleur RP2040, spécialement conçu par Raspberry Pi. Il intègre un double cœur ARM Cortex-M0+ cadencé à 133 MHz, offrant une performance respectable pour les applications embarquées.\
