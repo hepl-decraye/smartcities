@@ -10,3 +10,8 @@ Mémoire : Le microcontrôleur RP2040 est doté de 264 Ko de mémoire RAM, ce qu
 MicroPython est une implémentation du langage de programmation Python conçue spécifiquement pour les microcontrôleurs et les systèmes embarqués. Conçu pour offrir une expérience de développement simplifiée, MicroPython permet aux développeurs d'écrire du code Python sur des plateformes à ressources limitées telles que les microcontrôleurs. Il propose un sous-ensemble de la syntaxe Python standard, adapté aux contraintes de mémoire et de puissance de calcul des systèmes embarqués.
 ## Environnement de travail
 [GPIO](https://github.com/hepl-decraye/smartcities/tree/main/GPIO)
+[AD-PWM](https://github.com/hepl-decraye/smartcities/tree/main/AD-PWM)
+[LCD](https://github.com/hepl-decraye/smartcities/tree/main/LCD)
+[LED_neo](https://github.com/hepl-decraye/smartcities/tree/main/LED_neo)
+[sensors](https://github.com/hepl-decraye/smartcities/tree/main/sensors)
+[network](https://github.com/hepl-decraye/smartcities/tree/main/network)
