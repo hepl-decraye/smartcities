@@ -22,10 +22,13 @@ de clignotement à une autre.\
 ## Introduction
 Dans un premier temps, j'ai choisi de gérer l'appui sur le bouton-poussoir via une interruption. Cette approche permet une mise à jour instantanée à chaque pression sur le bouton, assurant ainsi une réactivité optimale dans la détection des nouveaux appuis.
 ## Cablage
-![](https://github.com/hepl-decraye/smartcities/blob/main/images/gpio.png)
+<p align="center">
+<img src="https://github.com/hepl-decraye/smartcities/blob/main/images/gpio.png">
+</p>
+
 ## Le code
 
-```
+```ruby
 import machine
 import utime
 
