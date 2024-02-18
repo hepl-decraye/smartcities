@@ -41,7 +41,7 @@ def play_note(note, duration, vol):
     if note is None:
         buzzer.duty_u16(0)  # Silence
     else:
-        led_pin.toggle()  # Inverse l'état d'une LED (supposément connectée à la broche 20)
+        led_pin.toggle()  # Inverse l'état d'une LED
         buzzer.freq(note)
         buzzer.duty_u16(int(vol))
         sleep(duration)
