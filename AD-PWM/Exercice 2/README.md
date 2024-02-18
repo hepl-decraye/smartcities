@@ -137,8 +137,9 @@ while True:
 
 
 ```
+## Tests du programme
+https://github.com/hepl-decraye/smartcities/assets/159047970/b0dfa501-a664-4baf-9654-f41c29e8b4b2
 
 
-https://github.com/hepl-decraye/smartcities/assets/159047970/cfba1384-5f22-49d6-82ed-15654d116455
 
 
