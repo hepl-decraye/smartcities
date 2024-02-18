@@ -43,10 +43,10 @@ bouton.irq(trigger=machine.Pin.IRQ_FALLING, handler=bouton_callback)
 while True:
     if val == 1:
         led.toggle()
-        utime.sleep(0.3)
+        utime.sleep(0.5)
     elif val == 2:
         led.toggle()
-        utime.sleep(0.1)
+        utime.sleep(0.2)
     elif val == 3:
         led.value(0)
         val = 0
