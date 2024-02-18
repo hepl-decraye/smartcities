@@ -23,56 +23,118 @@ o Le faite de changer le potentiomètre modifie directement le volume de la mél
 ## Le code
 ```
 from machine import Pin, PWM, ADC
-import time
+from time import sleep
 
-# Définir les broches utilisées
-buzzer_pin = 18  # Broche pour le buzzer
-potentiometer_pin = 26  # Broche pour le potentiomètre
-button_pin = 16  # Broche pour le bouton poussoir
-led_pin = 20  # Broche pour la LED
+def play_note(note, duration, vol):
+    if note is None:
+        buzzer.duty_u16(0)  # Silence
+    else:
+        led_pin.toggle()
+        buzzer.freq(note)
+        buzzer.duty_u16(int(vol))
+        sleep(duration)
+        
 
-# Initialiser les composants
-buzzer = PWM(Pin(buzzer_pin))
-potentiometer = ADC(Pin(potentiometer_pin))
-button = Pin(button_pin, Pin.IN, Pin.PULL_DOWN)
-led = Pin(led_pin, Pin.OUT)
+def button_interrupt_handler(pin):
+    global current_melody
+    if current_melody == melody_1:
+        current_melody = melody_2
+    else:
+        current_melody = melody_1
 
-# Liste des mélodies (à personnaliser)
-melodies = [
-    [262, 294, 330, 349, 392, 440, 494, 523],  # Mélodie 1
-    [555, 444, 333, 222, 555, 666, 800, 587]   # Mélodie 2 (exemple)
+button_pin = Pin(16, Pin.IN, Pin.PULL_DOWN)
+button_pin.irq(trigger=Pin.IRQ_FALLING, handler=button_interrupt_handler)  
+
+# Definition des notes
+def DO(time):
+    return 1046, time
+
+def RE(time):
+    return 1175, time
+
+def MI(time):
+    return 1318, time
+
+def FA(time):
+    return 1397, time
+
+def SO(time):
+    return 1568, time
+
+def LA(time):
+    return 1760, time
+
+def SI(time):
+    return 1967, time
+
+def NI(time):
+    return 15000, time
+
+# Initialisation
+buzzer = PWM(Pin(27))
+potentiometer_pin = ADC(Pin(26)) 
+led_pin = Pin(20, Pin.OUT)  
+
+melody_1 = [
+    DO(0.25), NI(0.05),
+    DO(0.25), NI(0.05),
+    SO(0.25), NI(0.05),
+    SO(0.25), NI(0.05),
+    LA(0.25), NI(0.05),
+    LA(0.25), NI(0.05),
+    SO(0.5), NI(0.05),
+
+    FA(0.25), NI(0.05),
+    FA(0.25), NI(0.05),
+    MI(0.25), NI(0.05),
+    MI(0.25), NI(0.05),
+
+    RE(0.25), NI(0.05),
+    RE(0.25), NI(0.05),
+    DO(0.5), NI(0.05),
 ]
 
-# Indice de la mélodie en cours
-current_melody = 0
+melody_2 = [
+    DO(0.25), NI(0.05), RE(0.25), NI(0.05),
+    MI(0.25), NI(0.05), DO(0.25), NI(0.05),
+    NI(0.01), DO(0.25), NI(0.05), RE(0.25), NI(0.05),
+    MI(0.25), NI(0.05), DO(0.25), NI(0.05),
+    
+    MI(0.25), NI(0.05), FA(0.25), NI(0.05),
+    SO(0.5), NI(0.05),
+    
+    MI(0.25), NI(0.05), FA(0.25), NI(0.05),
+    SO(0.5), NI(0.05), NI(0.01),
+    
+    SO(0.125), NI(0.05), LA(0.125), NI(0.05),
+    SO(0.125), NI(0.05), FA(0.125), NI(0.05),
+    MI(0.25), NI(0.05), DO(0.25), NI(0.05),
+    
+    SO(0.125), NI(0.05), LA(0.125), NI(0.05),
+    SO(0.125), NI(0.05), FA(0.125), NI(0.05),
+    MI(0.25), NI(0.05), DO(0.25), NI(0.05),
+    
+    RE(0.25), NI(0.05), SO(0.25), NI(0.05),
+    DO(0.5), NI(0.05), NI(0.01),
+    
+    RE(0.25), NI(0.05), SO(0.25), NI(0.05),
+    DO(0.5)
+]
 
-# Indice de la note en cours dans la mélodie
-current_note = 0
+current_melody = melody_1
 
-# Fonction pour jouer la mélodie avec le volume du potentiomètre
-def play_melody(volume):
-    global current_note
-    buzzer.freq(melodies[current_melody][current_note])
-    buzzer.duty_u16(int(5535 * volume / 100))
-    current_note = (current_note + 1) % len(melodies[current_melody])
-
-# Fonction de gestion de l'interruption du bouton poussoir
-def button_callback(pin):
-    global current_melody
-    current_melody = (current_melody + 1) % len(melodies)
-
-# Configuration de l'interruption pour le bouton poussoir
-button.irq(trigger=Pin.IRQ_RISING, handler=button_callback)
-
-# Boucle principale
 while True:
-    volume = potentiometer.read_u16() * 100 / 65535  # Calculer le volume en pourcentage
-    play_melody(volume)
+    # Lecture du potentiomètre en temps réel
+    pot_value = potentiometer_pin.read_u16()
+    vol = int((pot_value / 65535) * 1023)
+    
+    # Joue la note avec le volume adapté
+    note, duration = current_melody[0]
+    play_note(note, duration, vol)
+    
+    # Change la note
+    current_melody.append(current_melody.pop(0))
 
-    # Clignoter la LED au rythme de la mélodie
-    led.value(1)
-    time.sleep(0.1)
-    led.value(0)
-    time.sleep(0.1)
 
 ```
+<video src="
