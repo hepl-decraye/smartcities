@@ -28,7 +28,39 @@ Pour cet exercice, j'ai choisi de cabler le potentiomètre sur la pin A0 , le bu
 </p>
 
 ## Le code
+### Importation des bibliothèques
+```ruby
+from machine import Pin, PWM, ADC
+from time import sleep
 ```
+### Fonction pour jouer une note
+La fonction play_note est définie pour jouer une note sur le buzzer. Elle règle la fréquence et le cycle de service du buzzer PWM en fonction de la note et de la durée. Si note est None, cela représente une pause (silence).
+```ruby
+def play_note(note, duration, vol):
+    # Fonction pour jouer une note sur le buzzer
+    if note is None:
+        buzzer.duty_u16(0)  # Silence
+    else:
+        led_pin.toggle()  # Inverse l'état d'une LED (supposément connectée à la broche 20)
+        buzzer.freq(note)
+        buzzer.duty_u16(int(vol))
+        sleep(duration)
+```
+### Fonction pour l'interruption du bouton
+Cette fonction est appelée lorsqu'une interruption de bouton (<strong>front descendant</strong>) se produit sur la broche 16. Elle alterne entre deux mélodies (melody_1 et melody_2).
+```ruby
+def button_interrupt_handler(pin):
+    global current_melody
+    if current_melody == melody_1:
+        current_melody = melody_2
+    else:
+        current_melody = melody_1
+```
+
+
+
+### Le code complet
+```ruby
 from machine import Pin, PWM, ADC
 from time import sleep
 
