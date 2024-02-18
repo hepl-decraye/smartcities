@@ -1,6 +1,6 @@
 # EXERCICE 2 : VOLUME D'UNE MÉLODIE 
 ## Objectif
-Créer un programme MicroPython permet de gérer le volume d’une mélodie jouée sur un buzzer. Le 
+Créer un programme MicroPython qui permet de gérer le volume d’une mélodie jouée sur un buzzer. Le 
 volume est contrôlé par un potentiomètre.
 ## Matériel
 • Microcontrôleur compatible MicroPython (Raspberry Pi Pico) \
