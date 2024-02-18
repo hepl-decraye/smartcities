@@ -137,4 +137,8 @@ while True:
 
 
 ```
-<video src="
+
+
+https://github.com/hepl-decraye/smartcities/assets/159047970/cfba1384-5f22-49d6-82ed-15654d116455
+
+
