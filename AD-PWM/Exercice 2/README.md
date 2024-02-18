@@ -3,9 +3,11 @@
 Créer un programme MicroPython qui permet de gérer le volume d’une mélodie jouée sur un buzzer. Le 
 volume est contrôlé par un potentiomètre.
 ## Matériel
-• Microcontrôleur compatible MicroPython (Raspberry Pi Pico) \
+• Raspberry Pi Pico \
 • Module potentiomètre \
-• Buzzer \
+• Module buzzer \
+• Module bouton poussoir \
+• Module led \
 • Câbles 
 ## Consignes
 1. Branchez le buzzer et le potentiomètre au microcontrôleur 
