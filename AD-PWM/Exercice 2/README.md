@@ -29,13 +29,13 @@ Pour cet exercice, j'ai choisi de câbler le potentiomètre sur la broche A0, le
 
 ## Le code
 ### Importation des bibliothèques
-```ruby
+```Python
 from machine import Pin, PWM, ADC
 from time import sleep
 ```
 ### Fonction pour jouer une note
 La fonction `play_note` est définie pour jouer une note sur le buzzer. Elle règle la fréquence et le cycle de service du buzzer PWM en fonction de la note et de la durée. Si `note` est None, cela représente une pause (silence).
-```ruby
+```Python
 def play_note(note, duration, vol):
     # Fonction pour jouer une note sur le buzzer
     if note is None:
@@ -48,7 +48,7 @@ def play_note(note, duration, vol):
 ```
 ### Fonction pour l'interruption du bouton
 Cette fonction est appelée lorsqu'une interruption de bouton (<strong>front descendant</strong>) se produit sur la broche 16. Elle alterne entre deux mélodies (melody_1 et melody_2).
-```ruby
+```Python
 def button_interrupt_handler(pin):
     global current_melody
     if current_melody == melody_1:
@@ -58,14 +58,14 @@ def button_interrupt_handler(pin):
 ```
 ### Configuration de la broche du bouton et de l'interruption
 Configure la broche 16 en entrée avec une résistance de tirage vers le bas et met en place une interruption pour appeler button_interrupt_handler sur un front descendant.
-```ruby
+```Python
 button_pin = Pin(16, Pin.IN, Pin.PULL_DOWN)
 button_pin.irq(trigger=Pin.IRQ_FALLING, handler=button_interrupt_handler)
 ```
 ### Définition des notes
 Définition de fonctions telles que DO, RE, ..., DO4, RE4, ... représentant la fréquence et la durée de la note.\
 Voir le code complet pour toutes les notes.
-```ruby
+```Python
 #EXEMPLE
 def LA(time): 
     return 440, time
@@ -73,7 +73,7 @@ def LA(time):
 
 ### Initialisations
 Initialise la PWM pour le buzzer, l'ADC pour le potentiomètre, et configure une LED sur la broche 20 en sortie.
-```ruby
+```Python
 buzzer = PWM(Pin(27))
 potentiometer_pin = ADC(Pin(26))
 led_pin = Pin(20, Pin.OUT)
@@ -81,7 +81,7 @@ led_pin = Pin(20, Pin.OUT)
 
 ### Définition des mélodies
 Deux mélodies (melody_1 et melody_2) sont définies en utilisant les fonctions de note avec des durées spécifiées.
-```ruby
+```Python
 melody_1 = [ MI(0.41), NI(0.2), MI(0.47), NI(0.2), MI4(0.42), NI(0.2), RE4(0.42), NI(0.2), DO4(0.42), NI(0.2), SO4(1), NI(0.2),
     SO4(0.3), NI(0.2), FA4(0.22), NI(0.2), FA4(0.22), NI(0.2), MI4(0.22), NI(0.2), MI4(0.22), NI(0.2), RE4(1), NI(0.2),
     RE4(0.3), NI(0.2), DO4(0.22), NI(0.2), MI(0.22), NI(0.2), MI(0.22), NI(0.2), MI4(0.22), NI(0.2), RE4(0.54), NI(0.2),
@@ -96,7 +96,7 @@ melody_2 = [DO(0.25), NI(0.05), RE(0.25), NI(0.05), MI(0.25), NI(0.05), DO(0.25)
 ```
 ### Boucle principale
 Dans une boucle infinie,le code lit la valeur du potentiomètre, ajuste le volume, joue la note actuelle, puis passe à la note suivante dans la mélodie. La mélodie est jouée en boucle continue.
-```ruby
+```Python
 while True:
     # Lecture de la valeur du potentiomètre en temps réel
     pot_value = potentiometer_pin.read_u16()
@@ -111,7 +111,7 @@ while True:
 
 ```
 ### Le code complet
-```ruby
+```Python
 from machine import Pin, PWM, ADC
 from time import sleep
 
