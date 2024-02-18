@@ -21,8 +21,8 @@ o Le faite de changer le potentiomètre modifie directement le volume de la mél
 Pour ce projet, j'ai créé un code qui permet de jouer une mélodie sur un buzzer, avec une LED clignotante synchronisée à la musique. J'ai intégré un bouton poussoir pour changer la mélodie et un potentiomètre pour ajuster le volume en temps réel. Pour rendre le code plus efficace, j'utilise le bouton en mode interruption.
 </p>
 
-## Cablage
-Pour cet exercice, j'ai choisi de cabler le potentiomètre sur la pin A0, le bouton sur la pin D16, le buzzer sur la pin D18 et la led sur la pin D20.
+## Câblage
+Pour cet exercice, j'ai choisi de câbler le potentiomètre sur la broche A0, le bouton sur la broche D16, le buzzer sur la broche D18 et la LED sur la broche D20.
 <p align="center">
   <img src="https://github.com/hepl-decraye/smartcities/blob/main/images/Image2.png">
 </p>
