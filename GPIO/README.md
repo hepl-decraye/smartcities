@@ -28,7 +28,7 @@ Dans un premier temps, j'ai choisi de gérer l'appui sur le bouton-poussoir via 
 
 ## Le code
 
-```ruby
+```Python
 import machine
 import utime
 
