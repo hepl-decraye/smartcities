@@ -1,6 +1,6 @@
 # smartcities
 
-## Raspberry Pi Pico
+## Raspberry Pi Pico W
 <p align="center">
   <img src="https://github.com/hepl-decraye/smartcities/blob/main/images/Image1.png">
 </p>
