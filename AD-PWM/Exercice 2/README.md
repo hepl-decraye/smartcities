@@ -18,7 +18,7 @@ o Le faite de changer le potentiomètre modifie directement le volume de la mél
 • Ajouter une LED qui clignote au rythme de la mélodie.
 ## Introduction
 <p align="justify">
-Pour ce projet, je vais créer un code qui permettra de jouer une mélodie sur un buzzer, avec une LED clignotante synchronisée à la musique. J'ai intégré un bouton poussoir pour changer la mélodie et un potentiomètre pour ajuster le volume en temps réel. Pour rendre le code plus efficace, j'utiliserai le bouton en mode interruption.
+Pour ce projet, j'ai créé un code qui permet de jouer une mélodie sur un buzzer, avec une LED clignotante synchronisée à la musique. J'ai intégré un bouton poussoir pour changer la mélodie et un potentiomètre pour ajuster le volume en temps réel. Pour rendre le code plus efficace, j'utilise le bouton en mode interruption.
 </p>
 
 ## Cablage
