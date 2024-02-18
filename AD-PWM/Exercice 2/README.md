@@ -124,7 +124,6 @@ def play_note(note, duration, vol):
         buzzer.duty_u16(int(vol))
         sleep(duration)
         
-
 def button_interrupt_handler(pin):
     global current_melody
     if current_melody == melody_1:
@@ -138,50 +137,35 @@ button_pin.irq(trigger=Pin.IRQ_FALLING, handler=button_interrupt_handler)
 # Definition des notes
 def DO(time):
     return 262, time
-
 def RE(time):
     return 294, time
-
 def MI(time):
     return 330, time
-
 def FA(time):
     return 350, time
-
 def SO(time):
     return 392, time
-
 def LA(time):
     return 440, time
-
 def SI(time):
     return 494, time
-
 def NI(time):
     return 15000, time
 #_____________________
 def DO4(time):
     return 523, time
-
 def RE4(time):
     return 587, time
-
 def MI4(time):
     return 660, time
-
 def FA4(time):
     return 699, time
-
 def SO4(time):
     return 784, time
-
 def LA4(time):
     return 880, time
-
 def SI4(time):
     return 1967, time
-
-
 
 # Initialisation
 buzzer = PWM(Pin(27))
@@ -197,7 +181,6 @@ melody_1 = [
     MI(0.22), NI(0.2), MI4(0.22), NI(0.2), RE4(0.54), NI(0.2),
     SO4(0.22), NI(0.2), SO4(0.22), NI(0.2), FA4(0.22), NI(1),
 ]
-
 melody_2 = [
     DO(0.25), NI(0.05), RE(0.25), NI(0.05), MI(0.25), NI(0.05), DO(0.25), NI(0.05), NI(0.01), DO(0.25), NI(0.05), RE(0.25), NI(0.05),
     MI(0.25), NI(0.05), DO(0.25), NI(0.05), MI(0.25), NI(0.05), FA(0.25), NI(0.05), SO(0.5), NI(0.05),
@@ -209,7 +192,6 @@ melody_2 = [
     MI(0.25), NI(0.05), DO(0.25), NI(0.05), RE(0.25), NI(0.05), SO(0.25), NI(0.05),
     DO(0.5), NI(0.05), NI(0.01),RE(0.25), NI(0.05), SO(0.25), NI(0.05), DO(0.5)
 ]
-
 current_melody = melody_1
 
 while True:
@@ -223,7 +205,6 @@ while True:
     
     # Change la note
     current_melody.append(current_melody.pop(0))
-
 ```
 ## Tests du programme
 https://github.com/hepl-decraye/smartcities/assets/159047970/b0dfa501-a664-4baf-9654-f41c29e8b4b2
