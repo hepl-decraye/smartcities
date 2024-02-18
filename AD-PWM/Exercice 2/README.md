@@ -71,12 +71,43 @@ def LA(time):
     return 440, time
 ```
 
-### Initialisation
+### Initialisations
 Initialise la PWM pour le buzzer, l'ADC pour le potentiomètre, et configure une LED sur la broche 20 en sortie.
 ```ruby
 buzzer = PWM(Pin(27))
 potentiometer_pin = ADC(Pin(26))
 led_pin = Pin(20, Pin.OUT)
+```
+
+### Définition des mélodies
+Deux mélodies (melody_1 et melody_2) sont définies en utilisant les fonctions de note avec des durées spécifiées.
+```ruby
+melody_1 = [ MI(0.41), NI(0.2), MI(0.47), NI(0.2), MI4(0.42), NI(0.2), RE4(0.42), NI(0.2), DO4(0.42), NI(0.2), SO4(1), NI(0.2),
+    SO4(0.3), NI(0.2), FA4(0.22), NI(0.2), FA4(0.22), NI(0.2), MI4(0.22), NI(0.2), MI4(0.22), NI(0.2), RE4(1), NI(0.2),
+    RE4(0.3), NI(0.2), DO4(0.22), NI(0.2), MI(0.22), NI(0.2), MI(0.22), NI(0.2), MI4(0.22), NI(0.2), RE4(0.54), NI(0.2),
+    SO4(0.22), NI(0.2), SO4(0.22), NI(0.2), FA4(0.22), NI(1),]
+melody_2 = [DO(0.25), NI(0.05), RE(0.25), NI(0.05), MI(0.25), NI(0.05), DO(0.25), NI(0.05), NI(0.01), DO(0.25), NI(0.05), RE(0.25), NI(0.05),
+           MI(0.25), NI(0.05), DO(0.25), NI(0.05), MI(0.25), NI(0.05), FA(0.25), NI(0.05), SO(0.5), NI(0.05),
+           MI(0.25), NI(0.05), FA(0.25), NI(0.05), SO(0.5), NI(0.05), NI(0.01),
+           SO(0.125), NI(0.05), LA(0.125), NI(0.05), SO(0.125), NI(0.05), FA(0.125), NI(0.05), MI(0.25), NI(0.05), DO(0.25), NI(0.05),
+           SO(0.125), NI(0.05), LA(0.125), NI(0.05), SO(0.125), NI(0.05), FA(0.125), NI(0.05),
+           MI(0.25), NI(0.05), DO(0.25), NI(0.05), RE(0.25), NI(0.05), SO(0.25), NI(0.05),
+           DO(0.5), NI(0.05), NI(0.01),RE(0.25), NI(0.05), SO(0.25), NI(0.05), DO(0.5)]
+```
+### Boucle principale
+Dans une boucle infinie,le code lit la valeur du potentiomètre, ajuste le volume, joue la note actuelle, puis passe à la note suivante dans la mélodie. La mélodie est jouée en boucle continue.
+```ruby
+while True:
+    # Lecture de la valeur du potentiomètre en temps réel
+    pot_value = potentiometer_pin.read_u16()
+    vol = int((pot_value / 65535) * 1023)
+
+    # Joue la note avec le volume adapté
+    note, duration = current_melody[0]
+    play_note(note, duration, vol)
+
+    # Change la note pour l'itération suivante
+    current_melody.append(current_melody.pop(0))
 
 ```
 ### Le code complet
