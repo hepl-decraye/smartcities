@@ -22,7 +22,7 @@ Pour ce projet, je vais créer un code qui permettra de jouer une mélodie sur u
 </p>
 
 ## Cablage
-Pour cet exercice, j'ai choisi de cabler le potentiomètre sur la pin A0 , le button sur la pin D16, le buzzer sur la pin D18 et la led sur la pin D20.
+Pour cet exercice, j'ai choisi de cabler le potentiomètre sur la pin A0, le bouton sur la pin D16, le buzzer sur la pin D18 et la led sur la pin D20.
 <p align="center">
   <img src="https://github.com/hepl-decraye/smartcities/blob/main/images/Image2.png">
 </p>
