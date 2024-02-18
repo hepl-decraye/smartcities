@@ -34,7 +34,7 @@ from machine import Pin, PWM, ADC
 from time import sleep
 ```
 ### Fonction pour jouer une note
-La fonction play_note est définie pour jouer une note sur le buzzer. Elle règle la fréquence et le cycle de service du buzzer PWM en fonction de la note et de la durée. Si note est None, cela représente une pause (silence).
+La fonction `play_note` est définie pour jouer une note sur le buzzer. Elle règle la fréquence et le cycle de service du buzzer PWM en fonction de la note et de la durée. Si `note` est None, cela représente une pause (silence).
 ```ruby
 def play_note(note, duration, vol):
     # Fonction pour jouer une note sur le buzzer
@@ -56,9 +56,29 @@ def button_interrupt_handler(pin):
     else:
         current_melody = melody_1
 ```
+### Configuration de la broche du bouton et de l'interruption
+Configure la broche 16 en entrée avec une résistance de tirage vers le bas et met en place une interruption pour appeler button_interrupt_handler sur un front descendant.
+```ruby
+button_pin = Pin(16, Pin.IN, Pin.PULL_DOWN)
+button_pin.irq(trigger=Pin.IRQ_FALLING, handler=button_interrupt_handler)
+```
+### Définition des notes
+Définition de fonctions telles que DO, RE, ..., DO4, RE4, ... représentant la fréquence et la durée de la note.\
+Voir le code complet pour toutes les notes.
+```ruby
+#EXEMPLE
+def LA(time): 
+    return 440, time
+```
 
+### Initialisation
+Initialise la PWM pour le buzzer, l'ADC pour le potentiomètre, et configure une LED sur la broche 20 en sortie.
+```ruby
+buzzer = PWM(Pin(27))
+potentiometer_pin = ADC(Pin(26))
+led_pin = Pin(20, Pin.OUT)
 
-
+```
 ### Le code complet
 ```ruby
 from machine import Pin, PWM, ADC
