@@ -19,7 +19,10 @@ o Le faite de changer le potentiomètre modifie directement le volume de la mél
 ## Introduction
 
 ## Cablage
-![](https://github.com/hepl-decraye/smartcities/blob/main/images/Image2.png)
+<p align="center">
+  <img src="https://github.com/hepl-decraye/smartcities/blob/main/images/Image2.png">
+</p>
+
 ## Le code
 ```
 from machine import Pin, PWM, ADC
