@@ -26,7 +26,7 @@ Pour ce projet, j'ai créé un code qui permet de jouer une mélodie sur un buzz
 ## Câblage
 Pour cet exercice, j'ai choisi de câbler le potentiomètre sur la broche A0, le bouton sur la broche D16, le buzzer sur la broche D18 et la LED sur la broche D20.
 <p align="center">
-  <img src="https://github.com/hepl-decraye/smartcities/blob/main/images/Image2.png">
+  <img src="https://github.com/hepl-decraye/smartcities/blob/main/images/Image3.png">
 </p>
 
 ## Le code
