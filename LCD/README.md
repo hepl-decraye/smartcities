@@ -27,7 +27,7 @@ Créer un programme MicroPython qui permet gérer un thermostat à plusieurs ét
           - La LED clignote plus rapidement.
           - Le mot "ALARM" apparait sur l'écran LCD.
 ## Bonus
-• Afficher un battement progressif (dimmer) de la LED.
-• Faire clignoter le mot "ALARM" à l'écran.
+• Afficher un battement progressif (dimmer) de la LED.\
+• Faire clignoter le mot "ALARM" à l'écran.\
 • Faire défiler le mot "ALARM" sur l'écran.
 ## Introduction
