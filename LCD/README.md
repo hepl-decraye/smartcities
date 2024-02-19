@@ -15,7 +15,7 @@ Créer un programme MicroPython qui permet gérer un thermostat à plusieurs ét
     dans une plage de 15°C à 35 °C.\
   o Lire la température mesurée par le capteur toutes les secondes environ.\
   o Comparer la température mesurée à la température de consigne.\
-  o Afficher sur le module LCD: \
+  o Afficher sur le module LCD: 
       - La température de consigne, préfixée par "Set: ". 
       - La température mesurée préfixée par "Ambient: ". \
   o Contrôle:
