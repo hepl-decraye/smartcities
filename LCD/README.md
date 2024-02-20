@@ -38,4 +38,4 @@ Ce rapport présente la réalisation d'un programme en MicroPython sur le Raspbe
 
 ## Câblage
 Pour ce projet plusieurs modules ont été intégré au rapsberry pico : potentiomètre, led, buzzer, capteur DHT11 et l'écran lcd pour l'affichage (voir figure).
-[]()
+![](https://github.com/hepl-decraye/smartcities/blob/main/images/Image4.png)
