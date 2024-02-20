@@ -17,7 +17,7 @@ Créer un programme MicroPython qui permet gérer un thermostat à plusieurs ét
   o Comparer la température mesurée à la température de consigne.\
   o Afficher sur le module LCD: 
       - La température de consigne, préfixée par "Set: ". 
-      - La température mesurée préfixée par "Ambient: ". \
+      - La température mesurée préfixée par "Ambient: ". 
       
       o Contrôle:
       - Si la température mesurée est supérieure à la température de consigne: 
