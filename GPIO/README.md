@@ -69,7 +69,9 @@ while True:
 
     * Si val est égal à 3, la LED est éteinte, la variable val est réinitialisée à 0.
 ## Test du programme
-![](https://github.com/hepl-decraye/smartcities/blob/main/gifled.gif)
+
+https://github.com/hepl-decraye/smartcities/assets/159047970/6f9238ba-ff28-467f-ac8f-2bfd0c1b0c7d
+
 ## Conclusion
 <p align="justify">
 En conclusion, cet exercice a abouti à la création d'un programme efficace en MicroPython pour contrôler le clignotement d'une LED en fonction du nombre de pressions sur un bouton poussoir. L'utilisation d'une interruption assure une réactivité optimale, et le code élaboré a été expliqué de manière détaillée, avec des tests pour confirmer son bon fonctionnement.
