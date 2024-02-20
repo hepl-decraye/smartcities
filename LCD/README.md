@@ -43,4 +43,64 @@ Pour ce projet plusieurs modules ont été intégré au rapsberry pico : potenti
 </p>
 
 ## Le code
+```Python
+from lcd1602 import LCD1602
+import dht
+from machine import I2C,Pin,ADC,PWM
+from utime import sleep
+ 
+buzzer = PWM(Pin(27))
+potentiometer_pin = ADC(0) 
+led_pin = Pin(20, Pin.OUT) 
+ 
+i2c = I2C(1,scl=Pin(7), sda=Pin(6), freq=400000)
+d = LCD1602(i2c, 2, 16)
+d.display()
+dht = dht.DHT11(machine.Pin(18))
 
+def read_potentiometer():
+    pot_value = potentiometer_pin.read_u16()
+    return 15 + (pot_value / 65535) * 20 
+
+def read_temperature():
+    dht.measure()
+    temp = dht.temperature()
+    return temp
+
+def control_temperature(set_temperature, measured_temperature):
+        
+    if measured_temperature > set_temperature + 3:
+       # d.clear()
+        d.setCursor(4, 0)
+        d.print("!!ALARM!!")
+        sleep(0.5)
+        d.setCursor(4, 0)
+        d.print("               ")
+
+        buzzer.freq(500)
+        buzzer.duty_u16(600)
+                   
+    else:
+        d.print("")
+        buzzer.freq(600)
+        buzzer.duty_u16(0)
+
+while True:
+    set_temperature = read_potentiometer()
+    measured_temperature = read_temperature()
+    d.setCursor(7, 1)
+    d.print("S: "+str(set_temperature))
+    d.setCursor(0, 1)
+    d.print("A: "+str(measured_temperature))
+    control_temperature(set_temperature, measured_temperature)
+    
+    if measured_temperature > set_temperature:
+        led_pin.value(0)
+        sleep(0.5)
+        led_pin.value(1)
+        sleep(0.5)
+        
+    else:
+        led_pin.value(0)
+        sleep(1)
+```
