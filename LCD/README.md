@@ -32,3 +32,10 @@ Créer un programme MicroPython qui permet gérer un thermostat à plusieurs ét
 • Faire clignoter le mot "ALARM" à l'écran.\
 • Faire défiler le mot "ALARM" sur l'écran.
 ## Introduction
+<p align = justify>
+Ce rapport présente la réalisation d'un programme en MicroPython sur le Raspberry Pi Pico, visant à mettre en place un système de contrôle de température. Pour ce faire, nous avons utilisé divers composants tels que le capteur de température/humidité, la LED, le potentiomètre, l'écran LCD, et le Buzzer. L'objectif principal est de lire la valeur du potentiomètre, convertir cette valeur en une température de consigne, surveiller la température ambiante en temps réel, et afficher ces données sur l'écran LCD. Le programme inclut des fonctionnalités de contrôle, telles que l'activation de la LED et l'émission d'une alarme en cas de dépassement de la température de consigne. Des fonctionnalités bonus, comme le battement progressif de la LED et le clignotement/défilement de l'alarme à l'écran on été ajouté. 
+</p>
+
+## Câblage
+Pour ce projet plusieurs modules ont été intégré au rapsberry pico : potentiomètre, led, buzzer, capteur DHT11 et l'écran lcd pour l'affichage (voir figure).
+[]()
