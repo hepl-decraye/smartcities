@@ -104,3 +104,13 @@ while True:
         led_pin.value(0)
         sleep(1)
 ```
+
+## Test du programme
+
+
+https://github.com/hepl-decraye/smartcities/assets/159047970/cce2f0df-c521-408a-bd7a-de8e8c218507
+
+
+## Conclusion
+
+
