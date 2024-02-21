@@ -42,7 +42,37 @@ Pour ce projet plusieurs modules ont été intégré au rapsberry pico : potenti
 <img src="https://github.com/hepl-decraye/smartcities/blob/main/images/Image5.png">
 </p>
 
-## Le code
+## Explication du code
+### Importation des modules nécessaires :
+```Python
+from lcd1602 import LCD1602
+import dht
+from machine import I2C, Pin, ADC, PWM
+from utime import sleep
+```
+\
+### Configuration des broches pour le buzzer, le potentiomètre, la LED, l'I2C (pour l'écran LCD) et le capteur DHT11 :
+```Python
+buzzer = PWM(Pin(27))
+potentiometer_pin = ADC(0)
+led_pin = Pin(20, Pin.OUT)
+i2c = I2C(1, scl=Pin(7), sda=Pin(6), freq=400000)
+d = LCD1602(i2c, 2, 16)
+d.display()
+dht_sensor = dht.DHT11(machine.Pin(18))
+```
+\
+### Fonction pour lire la valeur du potentiomètre :
+La fonction renvoie une valeur comprise dans une plage de 0 à 35 grâce au calcul `ligne 3`.
+```Python
+def read_potentiometer():
+    pot_value = potentiometer_pin.read_u16()
+    return 15 + (pot_value / 65535) * 20
+```
+
+
+
+## Code complet
 ```Python
 from lcd1602 import LCD1602
 import dht
