@@ -194,5 +194,6 @@ https://github.com/hepl-decraye/smartcities/assets/159047970/cce2f0df-c521-408a-
 
 
 ## Conclusion
-
-
+<p align = justify>
+En conclusion, ce projet visant à créer un programme MicroPython pour gérer un thermostat à plusieurs états sur le Raspberry Pi Pico a été mené à bien. Le code intègre plusieurs modules tels que le capteur de température/humidité, la LED, le potentiomètre, l'écran LCD et le Buzzer. L'objectif principal était de lire la valeur du potentiomètre, convertir cette valeur en température de consigne, surveiller la température ambiante en temps réel, et afficher ces données sur l'écran LCD. Le programme inclut également des fonctionnalités de contrôle, notamment l'activation de la LED et l'émission d'une alarme en cas de dépassement de la température de consigne.
+</p>
