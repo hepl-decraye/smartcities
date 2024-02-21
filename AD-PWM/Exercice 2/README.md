@@ -213,4 +213,7 @@ https://github.com/hepl-decraye/smartcities/assets/159047970/b0dfa501-a664-4baf-
 
 
 
-
+## Conclusion
+<p align="justify">
+En conclusion, cet exercice visant à créer un programme MicroPython pour gérer le volume d'une mélodie jouée sur un buzzer a été réalisé avec succès. Le code intègre un potentiomètre pour ajuster le volume en temps réel, un bouton poussoir pour changer de mélodie, et une LED clignotante synchronisée à la musique. Pour finir, le programme fonctionne comme prévu, comme en témoigne la vidéo de démonstration.
+</p>
