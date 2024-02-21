@@ -50,8 +50,13 @@ import dht
 from machine import I2C, Pin, ADC, PWM
 from utime import sleep
 ```
-\
+
 ### Configuration des broches pour le buzzer, le potentiomètre, la LED, l'I2C (pour l'écran LCD) et le capteur DHT11 :
+- La première ligne configure le buzzer comme une sortie PWM sur la broche 27.
+- La deuxième ligne configure le potentiomètre comme une broche analogique sur la broche 0.
+- La troisième ligne configure la broche 20 comme une sortie pour la LED.
+- Les lignes suivantes initialisent la communication I2C pour l'écran LCD 1602.
+- La dernière ligne initialise le capteur DHT11 sur la broche 18.
 ```Python
 buzzer = PWM(Pin(27))
 potentiometer_pin = ADC(0)
@@ -61,16 +66,63 @@ d = LCD1602(i2c, 2, 16)
 d.display()
 dht_sensor = dht.DHT11(machine.Pin(18))
 ```
-\
+
 ### Fonction pour lire la valeur du potentiomètre :
-La fonction renvoie une valeur comprise dans une plage de 0 à 35 grâce au calcul `ligne 3`.
+La fonction lit la valeur du potentiomètre entre 0 et 65535, puis renvoie une valeur comprise dans une plage de 15 à 35.
 ```Python
 def read_potentiometer():
     pot_value = potentiometer_pin.read_u16()
     return 15 + (pot_value / 65535) * 20
 ```
 
+### Fonction pour lire la température du capteur DHT11 :
+Cette fonction mesure la température à l'aide du capteur DHT11 et renvoie la valeur mesurée.
+```Python
+def read_temperature():
+    dht_sensor.measure()
+    temp = dht_sensor.temperature()
+    return temp
+```
 
+### Fonction pour contrôler la température et activer le buzzer
+Cette fonction compare la température mesurée à la température de consigne. Si la température mesurée est supérieure de 3 degrés, elle affiche une alarme sur l'écran LCD, active le buzzer et efface ensuite l'alarme après une courte période pour qu'elle clignote. Sinon, elle désactive le buzzer.
+```Python
+def control_temperature(set_temperature, measured_temperature):
+    if measured_temperature > set_temperature + 3:
+        d.setCursor(4, 0)
+        d.print("!!ALARM!!")
+        sleep(0.5)
+        d.setCursor(4, 0)
+        d.print("               ")
+        buzzer.freq(500)
+        buzzer.duty_u16(600)
+    else:
+        d.print("")
+        buzzer.freq(600)
+        buzzer.duty_u16(0)
+```
+
+### Boucle principale
+La boucle principale lit en continu la valeur du potentiomètre, la température mesurée, affiche ces valeurs sur l'écran LCD, appelle la fonction `control_temperature`, et fait clignoter la LED si la température mesurée est supérieure à la température de consigne. 
+```Python
+while True:
+    set_temperature = read_potentiometer()
+    measured_temperature = read_temperature()
+    d.setCursor(7, 1)
+    d.print("S: " + str(set_temperature))
+    d.setCursor(0, 1)
+    d.print("A: " + str(measured_temperature))
+    control_temperature(set_temperature, measured_temperature)
+
+    if measured_temperature > set_temperature:
+        led_pin.value(0)
+        sleep(0.5)
+        led_pin.value(1)
+        sleep(0.5)
+    else:
+        led_pin.value(0)
+        sleep(1)
+```
 
 ## Code complet
 ```Python
